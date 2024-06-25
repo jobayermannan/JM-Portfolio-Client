@@ -8,14 +8,14 @@ export default {
     extend: {
       colors: {
         // Background and Text Colors
-        "primary": "#e0e7ff",       // Light gray-blue background
-        "dark": "#1e1b4b",          // Dark gray for primary text
-        "light": "#4B5563",         // Light gray for secondary text
-        "tertiary": "#292524",      // Dark gray for tertiary text
+        "primary": "#09112C  ",       // Light gray-blue background
+        "dark": "#FFFFFF",          // Dark gray for primary text
+        "mint": " #98FF98",         // Light gray for secondary text
+        "blue": "#ADD8E6",      // Dark gray for tertiary text
 
         // Button Colors
        // Soft blue for primary button background
-        "button-primary-text": "#FFFFFF",   // White for primary button text
+        "button-primary": "#98FF98",   // White for primary button text
         "button-secondary-bg": "#BDBDBD",   // Slightly darker gray for secondary button background
         "button-secondary-text": "#333333", // Dark gray for secondary button text
 
@@ -24,6 +24,20 @@ export default {
         "tab-hover-bg": "#CCCCCC",     // Light gray for tab hover background
       },
     },
+    screens: {
+   
+
+   
+
+      lg: {max: '2023px'},
+      
+
+      
+   
+
+      sm: {max: '1000px'},
+      
+    }
   },
   plugins: [],
 }

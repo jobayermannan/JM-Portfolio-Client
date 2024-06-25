@@ -1,6 +1,7 @@
 
 
 import React from 'react';
+import logo from "../assets/1.svg"
 
 
 
@@ -12,14 +13,9 @@ export default function Header() {
   };
 
   return (
-    <div className='bg-primary flex justify-center items-center h-24' >
-      
-      <img 
-        className='h-auto max-h-full w-auto   max-w-full' // Use max-h-full and max-w-full to constrain image within its container
-        style={imgStyle}
-        src='/src/assets/2iBiErVX4nMny3BuaZWJRrEf12Q.svg' 
-        alt='Logo of The Website' 
-      />
+    <div className='bg-primary flex justify-between items-center h-24 sm:h-20' >
+    <img src={logo} className='h-12 w-12'></img>
+      <h3 className='text-xl text-white cursor cursor-pointer'>Theme <span className='text-mint'> |</span> Resume</h3>
     </div>
   );
 }

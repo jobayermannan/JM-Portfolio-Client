@@ -7,3 +7,74 @@
 /* *{
 	font-family: "Montserrat", sans-serif;
 } */
+
+/* width */
+::-webkit-scrollbar {
+	width: 3px;
+ }
+ 
+ /* Track */
+ ::-webkit-scrollbar-track {
+	background: #09112C ; 
+ }
+  
+ /* Handle */
+ ::-webkit-scrollbar-thumb {
+	background:  #add8e653; 
+ }
+ 
+ .J{
+	animation: J 1s infinite;
+ }
+ 
+ @keyframes J{
+	0%{
+		 opacity: 1;
+	}
+	50%{
+		 opacity: 0.5;
+	}
+	100%{
+		 opacity: 0.5;
+	}
+ }
+ 
+ 
+ .M{
+	animation: M 1s infinite;
+ }
+ 
+ @keyframes M{
+	0%{
+		 opacity: 0.5;
+	}
+	50%{
+		 opacity: 1;
+	}
+	100%{
+		 opacity: 0.5;
+	}
+ }
+ 
+ 
+
+ 
+ /* input */
+ 
+ input , textarea{
+	height: 40px;
+	border: 1px solid gray;
+	width: 100%;
+	padding-left: 20px;
+ }
+ 
+ input:focus{
+	outline: none;
+	border: 2px solid rgb(56, 56, 56);
+ }
+ 
+ textarea{
+	height: 100px;
+	padding-top: 10px;
+ }
+ 
