@@ -14,8 +14,17 @@ export default function Header() {
 
   return (
     <div className='bg-primary flex justify-between items-center h-24 sm:h-20' >
-    <img src={logo} className='h-12 w-12'></img>
-      <h3 className='text-xl text-white cursor cursor-pointer'>Theme <span className='text-mint'> |</span> Resume</h3>
+        <div>
+        <img src={logo} className='h-12 w-12'></img>
+        </div>
+      <div>
+      <h3 className='text-xl text-white cursor cursor-pointer'>Theme <span className='text-mint'> |</span><a href="/src/assets/Resume/Jobayer_Mannan.pdf" download="Jobayer_Mannan.pdf">
+        <button className="text-blue">
+           Resume
+        </button>
+      </a></h3>
+      
+      </div>
     </div>
   );
 }
