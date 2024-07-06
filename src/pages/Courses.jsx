@@ -1,9 +1,14 @@
 import React, { useState } from 'react'
 import SectionTitle from '../Components/SectionTitle'
-import { courses } from '../Resources/course-resource';
+import { useSelector } from 'react-redux';
+
 
 export default function Courses() {
 	const [selectItemIndex, setSelectItemsIndex] = useState(0);
+  const {portfolioData} =useSelector(state=>state.root)
+	console.log(portfolioData)
+
+	const {courses} =portfolioData
   return (
 	 <div>
 		<SectionTitle title="Courses"></SectionTitle>
@@ -31,7 +36,7 @@ export default function Courses() {
        <div className='flex flex-col gap-5'>
           <h1 className="text-mint text-xl">{courses[selectItemIndex].title}</h1>
          
-          <p className="text-blue text-normal">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas repudiandae dolore quod ullam dolor placeat, tempora ex at veniam dolorem porro maxime mollitia hic esse vero blanditiis explicabo. Nemo, optio.</p>
+          <p className="text-blue text-normal">{courses[selectItemIndex].link}</p>
 			
      
         </div>
