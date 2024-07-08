@@ -13,11 +13,11 @@ import AdminContact from "./AdminContact";
 function Admin() {
   const { portfolioData } = useSelector((state) => state.root);
 
-  // useEffect(() => {
-  //   if (!localStorage.getItem("token")) {
-  //     window.location.href = "/admin-login";
-  //   }
-  // }, []);
+  useEffect(() => {
+    if (!localStorage.getItem("token")) {
+      window.location.href = "/admin-login";
+    }
+  }, []);
 
   const isAdminPage = true;
   const imgMargin = isAdminPage ? "22px" : "0rem";

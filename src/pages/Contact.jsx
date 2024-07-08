@@ -18,15 +18,14 @@ function Contact() {
       <div className="flex sm:flex-col items-center justify-between">
         <div className="flex flex-col gap-1">
           <p className="text-mint">{"{"}</p>
-          {Object.keys(contact).map(
-            (key) =>
-              key !== "_id" && (
-                <p className="ml-5">
-                  <span className="text-mint">{key} : </span>
-                  <span className="text-mint">{contact[key]}</span>
-                </p>
-              )
-          )}
+          {Object.keys(contact).map((key) => 
+  key !== "_id" && (
+    <p className="ml-5" key={key}> {/* Add the key prop here */}
+      <span className="text-mint">{key} : </span>
+      <span className="text-mint">{contact[key]}</span>
+    </p>
+  )
+)}
           <p className="text-mint">{"}"}</p>
         </div>
         <div className=" flex flex-col-reverse h-64">

@@ -65,7 +65,8 @@ export default function About() {
            {description1}
           </p>
           <p className="text-dark">
-            {description2}
+            {description2
+            }
           </p>
         </div>
       </div>
