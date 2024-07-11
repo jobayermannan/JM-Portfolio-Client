@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import axios from "axios";
 
-
 import Home from "./pages/Home";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -24,7 +23,9 @@ function App() {
   const getPortfolioData = async () => {
     try {
       dispatch(ShowLoading());
-      const response = await axios.get("http://localhost:5000/api/portfolio/portfolio-data");
+      const response = await axios.get(
+        "https://mern-portfolio-server-hqpsttave-jobayermannans-projects.vercel.app/api/portfolio/portfolio-data"
+      );
       dispatch(SetPortfolioData(response.data));
       dispatch(ReloadData(false));
       dispatch(HideLoading());
@@ -58,7 +59,3 @@ function App() {
 }
 
 export default App;
-
-  
-
-

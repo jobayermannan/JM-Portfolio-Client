@@ -17,12 +17,18 @@ function Experiences() {
       dispatch(ShowLoading());
       let response;
       if (selectedItemForEdit) {
-        response = await axios.post("http://localhost:5000/api/portfolio/update-experience", {
-          ...values,
-          _id: selectedItemForEdit._id,
-        });
+        response = await axios.post(
+          "https://mern-portfolio-server-hqpsttave-jobayermannans-projects.vercel.app/api/portfolio/update-experience",
+          {
+            ...values,
+            _id: selectedItemForEdit._id,
+          }
+        );
       } else {
-        response = await axios.post("http://localhost:5000/api/portfolio/add-experience", values);
+        response = await axios.post(
+          "https://mern-portfolio-server-hqpsttave-jobayermannans-projects.vercel.app/api/portfolio/add-experience",
+          values
+        );
       }
 
       dispatch(HideLoading());
@@ -44,9 +50,12 @@ function Experiences() {
   const onDelete = async (item) => {
     try {
       dispatch(ShowLoading());
-      const response = await axios.post("http://localhost:5000/api/portfolio/delete-experience", {
-        _id: item._id,
-      });
+      const response = await axios.post(
+        "https://mern-portfolio-server-hqpsttave-jobayermannans-projects.vercel.app/api/portfolio/delete-experience",
+        {
+          _id: item._id,
+        }
+      );
       dispatch(HideLoading());
       if (response.data.success) {
         message.success(response.data.message);
@@ -157,4 +166,4 @@ function Experiences() {
   );
 }
 
-export default Experiences; 
+export default Experiences;

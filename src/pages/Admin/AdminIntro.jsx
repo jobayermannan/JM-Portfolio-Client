@@ -12,11 +12,13 @@ function AdminIntro() {
   const onFinish = async (values) => {
     try {
       dispatch(ShowLoading());
-      const response = await axios.post("http://localhost:5000/api/portfolio/update-intro", {
-                
-              _id: portfolioData.intro._id,
-               ...values
-            });
+      const response = await axios.post(
+        "https://mern-portfolio-server-hqpsttave-jobayermannans-projects.vercel.app/api/portfolio/update-intro",
+        {
+          _id: portfolioData.intro._id,
+          ...values,
+        }
+      );
       dispatch(HideLoading());
       if (response.data.success) {
         message.success(response.data.message);
@@ -31,7 +33,6 @@ function AdminIntro() {
 
   return (
     <div>
-	
       <Form
         onFinish={onFinish}
         layout="vertical"
