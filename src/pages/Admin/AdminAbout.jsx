@@ -14,7 +14,7 @@ function AdminAbout() {
       values.skills = tempSkills;
       dispatch(ShowLoading());
       const response = await axios.post(
-        "https://mern-portfolio-server-hqpsttave-jobayermannans-projects.vercel.app/api/portfolio/update-about",
+        "http://localhost:5000/api/portfolio/update-about",
         {
           ...values,
           _id: portfolioData.about._id,

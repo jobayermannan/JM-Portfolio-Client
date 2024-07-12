@@ -12,7 +12,7 @@ function AdminContact() {
     try {
       dispatch(ShowLoading());
       const response = await axios.post(
-        "https://mern-portfolio-server-hqpsttave-jobayermannans-projects.vercel.app/api/portfolio/update-contact",
+        "http://localhost:5000/api/portfolio/update-contact",
         {
           ...values,
           _id: portfolioData.contact._id,

@@ -20,7 +20,7 @@ function AdminCourses() {
       let response;
       if (selectedItemForEdit) {
         response = await axios.post(
-          "https://mern-portfolio-server-hqpsttave-jobayermannans-projects.vercel.app/api/portfolio/update-course",
+          "http://localhost:5000/api/portfolio/update-course",
           {
             ...values,
             _id: selectedItemForEdit._id,
@@ -28,7 +28,7 @@ function AdminCourses() {
         );
       } else {
         response = await axios.post(
-          "https://mern-portfolio-server-hqpsttave-jobayermannans-projects.vercel.app/api/portfolio/add-course",
+          "http://localhost:5000/api/portfolio/add-course",
           values
         );
       }
@@ -54,7 +54,7 @@ function AdminCourses() {
     try {
       dispatch(ShowLoading());
       const response = await axios.post(
-        "https://mern-portfolio-server-hqpsttave-jobayermannans-projects.vercel.app/api/portfolio/delete-course",
+        "http://localhost:5000/api/portfolio/delete-course",
         {
           _id: item._id,
         }

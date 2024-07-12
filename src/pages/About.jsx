@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import SectionTitle from '../Components/SectionTitle';
 import Lottie from 'react-lottie-player';
 import { useSelector } from 'react-redux';
+import { motion } from 'framer-motion';
 
 export default function About() {
   const { loading, portfolioData } = useSelector((state) => state.root);
@@ -65,20 +66,29 @@ export default function About() {
            {description1}
           </p>
           <p className="text-dark">
-            {description2
-            }
+            {description2}
           </p>
         </div>
       </div>
 
       <div className="py-5">
         <h1 className="text-xl text-amber-400">Technologies I Have Learned:</h1>
-        <div className="flex flex-wrap gap-10 mt-5">
+        <div className="grid grid-cols-4 sm:grid-cols-3 gap-10 mt-5">
           {skills.map((skill, index) => (
-            <div key={index}>
-              <h1 className="text-dark border-2 border-amber-400 font-medium py-3 px-10">
-                {skill}
-              </h1>
+            <div key={index} className="w-full">
+              <div className="skill-name text-mint text-center">{skill.name}</div>
+              <div className="progress-container bg-gray-500 h-6 rounded-lg overflow-hidden">
+                <motion.div
+                  className="progress-bar  h-full"
+                  initial={{ width: 0 }}
+                  animate={{ width: `${skill.percentage}%` }}
+                  transition={{ duration: 1.5 }}
+                >
+                  <div className="flex justify-center items-center h-full text-black">
+                    {skill.percentage}%
+                  </div>
+                </motion.div>
+              </div>
             </div>
           ))}
         </div>

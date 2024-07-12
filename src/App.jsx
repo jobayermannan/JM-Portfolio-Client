@@ -24,7 +24,7 @@ function App() {
     try {
       dispatch(ShowLoading());
       const response = await axios.get(
-        "https://mern-portfolio-server-hqpsttave-jobayermannans-projects.vercel.app/api/portfolio/portfolio-data"
+        "http://localhost:5000/api/portfolio/portfolio-data"
       );
       dispatch(SetPortfolioData(response.data));
       dispatch(ReloadData(false));

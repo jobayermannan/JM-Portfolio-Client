@@ -83,4 +83,27 @@
 	height: 100px;
 	padding-top: 10px;
  }
+
+ 
+ 
+ 
+ 
+ .progress-container {
+	width: 100%;
+	background-color: #ffffff
+ }
+ 
+ .progress-bar {
+	text-align: center;
+	line-height: 30px; /* Same as height to vertically center text */
+	height: 30px;
+	background-color:#00fd7b;
+	transition: width 4s;
+ }
+ 
+ .skill-name {
+	text-align: center;
+	margin-top: 10px;
+ }
+ 
  

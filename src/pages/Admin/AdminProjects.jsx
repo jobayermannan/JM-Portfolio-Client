@@ -20,7 +20,7 @@ function AdminProjects() {
       let response;
       if (selectedItemForEdit) {
         response = await axios.post(
-          "https://mern-portfolio-server-hqpsttave-jobayermannans-projects.vercel.app/api/portfolio/update-project",
+          "http://localhost:5000/api/portfolio/update-project",
           {
             ...values,
             _id: selectedItemForEdit._id,
@@ -28,7 +28,7 @@ function AdminProjects() {
         );
       } else {
         response = await axios.post(
-          "https://mern-portfolio-server-hqpsttave-jobayermannans-projects.vercel.app/https://mern-portfolio-server-hqpsttave-jobayermannans-projects.vercel.app/api/portfolio/add-project",
+          "http://localhost:5000/http://localhost:5000/api/portfolio/add-project",
           values
         );
       }
@@ -53,7 +53,7 @@ function AdminProjects() {
     try {
       dispatch(ShowLoading());
       const response = await axios.post(
-        "https://mern-portfolio-server-hqpsttave-jobayermannans-projects.vercel.app/api/portfolio/delete-project",
+        "http://localhost:5000/api/portfolio/delete-project",
         {
           _id: item._id,
         }

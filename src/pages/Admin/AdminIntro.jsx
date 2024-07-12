@@ -13,7 +13,7 @@ function AdminIntro() {
     try {
       dispatch(ShowLoading());
       const response = await axios.post(
-        "https://mern-portfolio-server-hqpsttave-jobayermannans-projects.vercel.app/api/portfolio/update-intro",
+        "http://localhost:5000/api/portfolio/update-intro",
         {
           _id: portfolioData.intro._id,
           ...values,
