@@ -97,7 +97,7 @@
 	text-align: center;
 	line-height: 30px; /* Same as height to vertically center text */
 	height: 30px;
-	background-color:#00fd7b;
+	background-color:#8e7fc2;
 	transition: width 4s;
  }
  
@@ -105,5 +105,15 @@
 	text-align: center;
 	margin-top: 10px;
  }
+ .unique-resume-button {
+	/* Initial button styling */
+	background-color: #98FF98; /* Example background color */
+	color: black; /* Initial text color */
+
+ }
  
+ .unique-resume-button:hover {
+	color: #98FF98 !important; 
+	background-color: #09112C !important/* Change text color to mint on hover */
+ }
  

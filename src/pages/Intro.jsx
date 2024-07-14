@@ -17,12 +17,12 @@ function Intro() {
   };
 
   const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: { y: 0, opacity: 1, transition: { duration: 0.5 } }
+    hidden: { y: 30, opacity: 0 },
+    visible: { y: 0, opacity: 1, transition: { duration: 1 } }
   };
 
   const buttonVariants = {
-    hover: { scale: 1.1, transition: { duration: 0.3 } }
+    hover: { scale: 1.1, transition: { duration: 0.7 } }
   };
 
   return (

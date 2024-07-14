@@ -33,24 +33,21 @@ export default function Experiences() {
     >
       <SectionTitle title="Experience" />
       <div className="flex py-10 gap-20 sm:flex-col">
-     
-  <div className='flex flex-col gap-10 border-l-[2px] border-[#fbfbfb3a] w-1/3 sm:w-full sm:flex-row sm:overflow-x-scroll sm:items-center'>
-    {experiences.map((experience, index) => (
-      <button
-        key={index}
-        onClick={() => setSelectItemIndex(index)}
-        className='cursor-pointer focus:outline-none sm:flex-shrink-0'
-        style={{ minWidth: '250px' }} // Ensure each button has a minimum width, adjust as needed
-      >
-        <h1
-          className={`text-lg px-5 py-3 ${selectItemIndex === index ? "text-mint bg-[#add8e62b] border-mint border-l-[3px] -ml-[2px]" : "text-white"}`}
-        >
-          {experience.period}
-        </h1>
-      </button>
-    ))}
-  </div>
-
+        <div className='flex flex-col gap-10 border-l-[2px] border-[#fbfbfb3a] w-1/3 sm:w-full sm:flex-row sm:overflow-x-scroll'>
+          {experiences.map((experience, index) => (
+            <button
+              key={index}
+              onClick={() => setSelectItemIndex(index)}
+              className='cursor-pointer focus:outline-none'
+            >
+              <h1
+                className={`text-lg px-5 py-3 ${selectItemIndex === index ? "text-mint bg-[#add8e62b] border-mint border-l-[3px] -ml-[2px]" : "text-white"}`}
+              >
+                {experience.period}
+              </h1>
+            </button>
+          ))}
+        </div>
         <Card
   title={<span className="text-mint text-md">{experiences[selectItemIndex].title}</span>}
   bordered={true}

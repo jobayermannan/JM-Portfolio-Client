@@ -8,7 +8,7 @@ export default {
     extend: {
       colors: {
         // Background and Text Colors
-        "primary": "#09112C  ",       // Light gray-blue background
+        "primary": "#09112C",       // Light gray-blue background
         "dark": "#FFFFFF",          // Dark gray for primary text
         "mint": " #98FF98",         // Light gray for secondary text
         "blue": "#ADD8E6",      // Dark gray for tertiary text
