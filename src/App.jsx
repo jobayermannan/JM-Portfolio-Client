@@ -14,6 +14,7 @@ import {
 import Login from "./pages/Admin/Login";
 import Loader from "./Components/Loader";
 import Admin from "./pages/Admin/Admin";
+import Blog from "./pages/Blog";
 
 function App() {
   const { loading, portfolioData, reloadData } = useSelector(
@@ -53,6 +54,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/admin-login" element={<Login />} />
+        <Route path="/blog" element={<Blog />} />
       </Routes>
     </BrowserRouter>
   );

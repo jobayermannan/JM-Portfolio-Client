@@ -105,14 +105,14 @@
 	text-align: center;
 	margin-top: 10px;
  }
- .unique-resume-button {
+ .unique-button {
 	/* Initial button styling */
 	background-color: #98FF98; /* Example background color */
 	color: black; /* Initial text color */
 
  }
  
- .unique-resume-button:hover {
+ .unique-button:hover {
 	color: #98FF98 !important; 
 	background-color: #09112C !important/* Change text color to mint on hover */
  }

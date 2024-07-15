@@ -57,8 +57,8 @@ export default function Projects() {
             <button
               key={index}
               onClick={() => setSelectItemIndex(index)}
-              className='cursor-pointer focus:outline-none'
-              style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }} // Make project title responsive
+              className='cursor-pointer focus:outline-none sm:flex-shrink-0'
+              style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' , minWidth: '160px'}} // Make project title responsive
             >
               <h1
                 className={`text-lg px-5 py-3 ${selectItemIndex === index ? "text-mint bg-[#add8e62b] border-mint border-l-[3px] -ml-[2px]" : "text-white"}`}
@@ -78,7 +78,8 @@ export default function Projects() {
           <Card
             title={<span className="text-mint text-md">{projects[selectItemIndex].title}</span>}
             bordered={true}
-            style={{ width: '100%', borderColor: '#ADD8E6', backgroundColor: '#09112C', boxShadow: '0 4px 8px 0 #98FF98' }} // Enhanced card design
+            style={{ width: '100%', borderColor: '#ADD8E6', backgroundColor: '#ADD8E6' }}
+            styles={{ header: { backgroundColor: '#09112C', color: '#09112C' } }}  // Enhanced card design
             className="rounded-lg"
           >
             <div className="bg-[#09112C] text-white p-4 rounded-lg">
