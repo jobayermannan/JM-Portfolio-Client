@@ -11,6 +11,7 @@ import Footer from './Footer'
 import LeftSidebar from './LeftSidebar'
 import { useSelector } from 'react-redux'
 import About from './About'
+import MessageMe from './MessageMe'
 
 export default function Home() {
 
@@ -28,6 +29,7 @@ export default function Home() {
     <Projects></Projects>
     <Courses></Courses>
     <Contact></Contact>
+    <MessageMe></MessageMe>
     <Footer></Footer>
     <LeftSidebar></LeftSidebar>
   

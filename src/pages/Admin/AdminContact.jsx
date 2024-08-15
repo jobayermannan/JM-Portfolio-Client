@@ -8,11 +8,13 @@ import { message } from "antd";
 function AdminContact() {
   const dispatch = useDispatch();
   const { portfolioData } = useSelector((state) => state.root);
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
   const onFinish = async (values) => {
     try {
       dispatch(ShowLoading());
       const response = await axios.post(
-        "http://localhost:5000/api/portfolio/update-contact",
+        `${API_BASE_URL}/portfolio/update-contact`,
         {
           ...values,
           _id: portfolioData.contact._id,

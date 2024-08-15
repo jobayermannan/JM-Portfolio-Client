@@ -11,6 +11,7 @@ function AdminProjects() {
   const [showAddEditModal, setShowAddEditModal] = React.useState(false);
   const [selectedItemForEdit, setSelectedItemForEdit] = React.useState(null);
   const [type, setType] = React.useState("add");
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
   const onFinish = async (values) => {
     try {
@@ -20,7 +21,7 @@ function AdminProjects() {
       let response;
       if (selectedItemForEdit) {
         response = await axios.post(
-          "http://localhost:5000/api/portfolio/update-project",
+          `${API_BASE_URL}/update-project`,
           {
             ...values,
             _id: selectedItemForEdit._id,
@@ -28,7 +29,7 @@ function AdminProjects() {
         );
       } else {
         response = await axios.post(
-          "http://localhost:5000/http://localhost:5000/api/portfolio/add-project",
+          `${API_BASE_URL}/add-project`,
           values
         );
       }
@@ -53,7 +54,7 @@ function AdminProjects() {
     try {
       dispatch(ShowLoading());
       const response = await axios.post(
-        "http://localhost:5000/api/portfolio/delete-project",
+        `${API_BASE_URL}/delete-project`,
         {
           _id: item._id,
         }
@@ -91,8 +92,9 @@ function AdminProjects() {
             <h1 className="text-primary text-xl font-bold">{project.title}</h1>
             <hr />
             <img src={project.image} alt="" className="h-60 w-80" />
-            <h1>Role : {project.title}</h1>
-            <h1>{project.description}</h1>
+            <h1> {project.title}</h1>
+            <h1>{project.shortDescription}</h1>
+            <h1>{project.detailedDescription}</h1>
             <div className="flex justify-end gap-5 mt-5">
               <button
                 className="bg-red-500 text-white px-5 py-2 "
@@ -143,14 +145,20 @@ function AdminProjects() {
             <Form.Item name="image" label="Image URL">
               <input placeholder="Image" />
             </Form.Item>
-            <Form.Item name="description" label="Description">
-              <textarea placeholder="Description" />
+            <Form.Item name="shortDescription" label="Short Description">
+              <textarea placeholder="Short Description" />
+            </Form.Item>
+            <Form.Item name="detailedDescription" label="Detailed Description">
+              <textarea placeholder="Detailed Description" />
             </Form.Item>
             <Form.Item name="link" label="Link">
               <input placeholder="Link" />
             </Form.Item>
             <Form.Item name="technologies" label="Technologies">
               <input placeholder="Technologies" />
+            </Form.Item>
+            <Form.Item name="githubLink" label="GitHub Link">
+              <input placeholder="GitHub Link" />
             </Form.Item>
 
             <div className="flex justify-end">

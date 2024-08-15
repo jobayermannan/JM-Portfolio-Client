@@ -17,6 +17,7 @@ import Admin from "./pages/Admin/Admin";
 import Blog from "./pages/Blog";
 
 function App() {
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
   const { loading, portfolioData, reloadData } = useSelector(
     (state) => state.root
   );
@@ -25,7 +26,7 @@ function App() {
     try {
       dispatch(ShowLoading());
       const response = await axios.get(
-        "http://localhost:5000/api/portfolio/portfolio-data"
+        `${API_BASE_URL}/portfolio-data`
       );
       dispatch(SetPortfolioData(response.data));
       dispatch(ReloadData(false));

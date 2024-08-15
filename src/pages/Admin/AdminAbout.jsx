@@ -8,13 +8,15 @@ import { message } from "antd";
 function AdminAbout() {
   const dispatch = useDispatch();
   const { portfolioData } = useSelector((state) => state.root);
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
   const onFinish = async (values) => {
     try {
       const tempSkills = values.skills.split(",");
       values.skills = tempSkills;
       dispatch(ShowLoading());
       const response = await axios.post(
-        "http://localhost:5000/api/portfolio/update-about",
+        `${API_BASE_URL}/portfolio/update-about`,
         {
           ...values,
           _id: portfolioData.about._id,

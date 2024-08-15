@@ -11,6 +11,7 @@ function Experiences() {
   const [showAddEditModal, setShowAddEditModal] = React.useState(false);
   const [selectedItemForEdit, setSelectedItemForEdit] = React.useState(null);
   const [type, setType] = React.useState("add");
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
   const onFinish = async (values) => {
     try {
@@ -18,7 +19,7 @@ function Experiences() {
       let response;
       if (selectedItemForEdit) {
         response = await axios.post(
-          "http://localhost:5000/api/portfolio/update-experience",
+          `${API_BASE_URL}/portfolio/update-experience`,
           {
             ...values,
             _id: selectedItemForEdit._id,
@@ -26,7 +27,7 @@ function Experiences() {
         );
       } else {
         response = await axios.post(
-          "http://localhost:5000/api/portfolio/add-experience",
+          `${API_BASE_URL}/portfolio/add-experience`,
           values
         );
       }
@@ -51,7 +52,7 @@ function Experiences() {
     try {
       dispatch(ShowLoading());
       const response = await axios.post(
-        "http://localhost:5000/api/portfolio/delete-experience",
+        `${API_BASE_URL}/portfolio/delete-experience`,
         {
           _id: item._id,
         }

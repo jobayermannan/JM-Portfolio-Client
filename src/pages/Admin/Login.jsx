@@ -10,11 +10,13 @@ function Login() {
     password: "",
   });
   const dispatch = useDispatch();
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
   const login = async () => {
     try {
       dispatch(ShowLoading());
       const response = await axios.post(
-        "http://localhost:5000/api/portfolio/admin-login",
+        `${API_BASE_URL}/portfolio/admin-login`,
         user
       );
       dispatch(HideLoading());

@@ -97,7 +97,7 @@
 	text-align: center;
 	line-height: 30px; /* Same as height to vertically center text */
 	height: 30px;
-	background-color:#8e7fc2;
+	background-color:#ff9216;
 	transition: width 4s;
  }
  
@@ -114,6 +114,8 @@
  
  .unique-button:hover {
 	color: #98FF98 !important; 
-	background-color: #09112C !important/* Change text color to mint on hover */
+	background-color: #0c1b4f !important/* Change text color to mint on hover */
  }
+
+
  

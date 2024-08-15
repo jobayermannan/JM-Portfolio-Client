@@ -12,6 +12,8 @@ function AdminCourses() {
   const [selectedItemForEdit, setSelectedItemForEdit] = React.useState(null);
   const [type, setType] = React.useState("add");
   const [form] = Form.useForm();
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
   const onFinish = async (values) => {
     try {
       const tempTechnologies = values?.technologies?.split(",") || [];
@@ -20,7 +22,7 @@ function AdminCourses() {
       let response;
       if (selectedItemForEdit) {
         response = await axios.post(
-          "http://localhost:5000/api/portfolio/update-course",
+          `${API_BASE_URL}/update-course`,
           {
             ...values,
             _id: selectedItemForEdit._id,
@@ -28,7 +30,7 @@ function AdminCourses() {
         );
       } else {
         response = await axios.post(
-          "http://localhost:5000/api/portfolio/add-course",
+          `${API_BASE_URL}/add-course`,
           values
         );
       }
@@ -54,7 +56,7 @@ function AdminCourses() {
     try {
       dispatch(ShowLoading());
       const response = await axios.post(
-        "http://localhost:5000/api/portfolio/delete-course",
+        `${API_BASE_URL}/delete-course`,
         {
           _id: item._id,
         }

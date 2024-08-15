@@ -72,7 +72,7 @@ export default function About() {
       </div>
 
       <div className="py-5">
-        <h1 className="text-xl text-amber-400">Technologies I Have Learned:</h1>
+        <h1 className="text-2xl font-medium text-amber-500">Technologies I Have Learned:</h1>
         <div className="grid grid-cols-4 sm:grid-cols-3 gap-10 mt-5">
           {skills.map((skill, index) => (
             <div key={index} className="w-full">
