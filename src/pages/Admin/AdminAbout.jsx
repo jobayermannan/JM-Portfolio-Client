@@ -16,7 +16,7 @@ function AdminAbout() {
       values.skills = tempSkills;
       dispatch(ShowLoading());
       const response = await axios.post(
-        `${API_BASE_URL}/portfolio/update-about`,
+        `${API_BASE_URL}/update-about`,
         {
           ...values,
           _id: portfolioData.about._id,

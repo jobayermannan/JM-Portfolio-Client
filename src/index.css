@@ -90,20 +90,20 @@
  
  .progress-container {
 	width: 100%;
-	background-color: #ffffff
+	background-color:   #33a6cf
  }
  
  .progress-bar {
 	text-align: center;
 	line-height: 30px; /* Same as height to vertically center text */
 	height: 30px;
-	background-color:#ff9216;
+	background-color:#98d3d9;
 	transition: width 4s;
  }
  
  .skill-name {
 	text-align: center;
-	margin-top: 10px;
+	margin-top: 5px;
  }
  .unique-button {
 	/* Initial button styling */

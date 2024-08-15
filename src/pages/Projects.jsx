@@ -77,19 +77,21 @@ export default function Projects() {
             styles={{ header: { backgroundColor: '#09112C', color: '#09112C' } }} // Enhanced card design
             className="rounded-lg"
           >
-            <div className="bg-[#09112C] text-white p-4 rounded-lg">
-              <img src={projects[selectItemIndex].image} alt={projects[selectItemIndex].title} className='h-60 w-full object-cover mb-4 rounded-lg' />
-              <h4 className="text-blue text-lg font-medium mb-4 leading-tight">{projects[selectItemIndex].shortDescription}</h4>
-              <p className="text-xs mb-4">{projects[selectItemIndex].detailedDescription}</p>
-              <div className='flex items-center justify-between'>
-                <a href={projects[selectItemIndex].link} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-mint transition duration-300">
-                  <FaExternalLinkAlt className="inline mr-2" />Project Link
-                </a>
-                <a href={projects[selectItemIndex].githubLink} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-mint transition duration-300">
-                  <FaGithub className="inline mr-2" />GitHub Repository
-                </a>
-              </div>
-            </div>
+           <div className="bg-[#09112C] text-white overflow-hidden p-4 rounded-lg">
+  <div className="h-60 w-full mb-4 rounded-lg overflow-hidden">
+    <img src={projects[selectItemIndex].image} alt={projects[selectItemIndex].title} className='h-full w-full object-contain' />
+  </div>
+  <h4 className="text-blue text-lg font-medium mb-4 leading-tight">{projects[selectItemIndex].shortDescription}</h4>
+  <p className="text-xs mb-4">{projects[selectItemIndex].detailedDescription}</p>
+  <div className='flex items-center justify-between'>
+    <a href={projects[selectItemIndex].link} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-mint transition duration-300">
+      <FaExternalLinkAlt className="inline mr-2" />Project Link
+    </a>
+    <a href={projects[selectItemIndex].githubLink} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-mint transition duration-300">
+      <FaGithub className="inline mr-2" />GitHub Repository
+    </a>
+  </div>
+</div>
           </Card>
         </motion.div>
       </div>

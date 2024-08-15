@@ -19,7 +19,7 @@ function Experiences() {
       let response;
       if (selectedItemForEdit) {
         response = await axios.post(
-          `${API_BASE_URL}/portfolio/update-experience`,
+          `${API_BASE_URL}/update-experience`,
           {
             ...values,
             _id: selectedItemForEdit._id,
@@ -27,7 +27,7 @@ function Experiences() {
         );
       } else {
         response = await axios.post(
-          `${API_BASE_URL}/portfolio/add-experience`,
+          `${API_BASE_URL}/add-experience`,
           values
         );
       }
@@ -52,7 +52,7 @@ function Experiences() {
     try {
       dispatch(ShowLoading());
       const response = await axios.post(
-        `${API_BASE_URL}/portfolio/delete-experience`,
+        `${API_BASE_URL}/delete-experience`,
         {
           _id: item._id,
         }

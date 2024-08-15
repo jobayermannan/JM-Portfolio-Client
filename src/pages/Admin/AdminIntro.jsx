@@ -15,7 +15,7 @@ function AdminIntro() {
     try {
       dispatch(ShowLoading());
       const response = await axios.post(
-        `${API_BASE_URL}/portfolio/update-intro`,
+        `${API_BASE_URL}/update-intro`,
         {
           _id: portfolioData.intro._id,
           ...values,
