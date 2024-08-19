@@ -11,7 +11,7 @@ export default function Header({ imgMargin, textMargin, dashboard }) {
   const handleDownload = () => {
     // Simulate download
     const link = document.createElement('a');
-    link.href = '/src/assets/Resume/Jobayer_Mannan.pdf';
+    link.href = 'https://drive.google.com/uc?export=download&id=1bIqvwFp4D-swHEnRnwEt-anOKefZPzgw'; // Direct download link
     link.download = 'Jobayer_Mannan.pdf';
     document.body.appendChild(link);
     link.click();
@@ -27,9 +27,9 @@ export default function Header({ imgMargin, textMargin, dashboard }) {
   return (
     <div className='bg-primary flex justify-between items-center h-20 sm:h-20 mb-0'>
       <div style={{ marginLeft: imgMargin, marginRight: imgMargin }} className='flex items-center'>
-      <Link to="/">
-    <img src={logo} alt="Logo" style={{ height: '50px' }} />
-  </Link>
+        <Link to="/">
+          <img src={logo} alt="Logo" style={{ height: '50px' }} />
+        </Link>
       </div>
       <div style={{ marginLeft: textMargin, marginRight: textMargin }} className='flex items-center gap-4'>
         {dashboard ? (
