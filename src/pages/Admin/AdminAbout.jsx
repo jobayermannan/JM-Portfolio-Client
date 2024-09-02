@@ -1,9 +1,10 @@
 import React from "react";
-import { Form, Input } from "antd";
+import { Form, Input, Button, Space } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import { ShowLoading, HideLoading } from "../../redux/rootSlice";
 import axios from "axios";
 import { message } from "antd";
+import { MinusCircleOutlined, PlusOutlined } from "@ant-design/icons";
 
 function AdminAbout() {
   const dispatch = useDispatch();
@@ -12,8 +13,6 @@ function AdminAbout() {
 
   const onFinish = async (values) => {
     try {
-      const tempSkills = values.skills.split(",");
-      values.skills = tempSkills;
       dispatch(ShowLoading());
       const response = await axios.post(
         `${API_BASE_URL}/update-about`,
@@ -41,28 +40,57 @@ function AdminAbout() {
         layout="vertical"
         initialValues={{
           ...portfolioData.about,
-          skills: portfolioData.about.skills.join(" , "),
         }}
       >
-        <Form.Item name="lottieURL" label="Lottie URL">
-          <input placeholder="Lottie URL" />
+        <Form.Item name="lottieURL" label="Lottie URL" rules={[{ required: true, message: 'Please input the Lottie URL!' }]}>
+          <Input placeholder="Lottie URL" />
         </Form.Item>
 
-        <Form.Item name="description1" label="Description1">
-          <textarea placeholder="Description1" />
+        <Form.Item name="description1" label="Description 1" rules={[{ required: true, message: 'Please input the first description!' }]}>
+          <Input.TextArea placeholder="Description 1" />
         </Form.Item>
 
-        <Form.Item name="description2" label="Description2">
-          <textarea placeholder="Description2" />
+        <Form.Item name="description2" label="Description 2" rules={[{ required: true, message: 'Please input the second description!' }]}>
+          <Input.TextArea placeholder="Description 2" />
         </Form.Item>
 
-        <Form.Item name="skills" label="Skills">
-          <textarea placeholder="Skills" />
-        </Form.Item>
-        <div className="flex justify-end w-full" label="Welcome Text">
-          <button className="px-10 py-2 bg-primary text-white" type="submit">
+        <Form.List name="skills">
+          {(fields, { add, remove }) => (
+            <>
+              {fields.map(({ key, name, fieldKey, ...restField }) => (
+                <Space key={key} style={{ display: 'flex', marginBottom: 8 }} align="baseline">
+                  <Form.Item
+                    {...restField}
+                    name={[name, 'name']}
+                    fieldKey={[fieldKey, 'name']}
+                    rules={[{ required: true, message: 'Missing skill name' }]}
+                  >
+                    <Input placeholder="Skill Name" />
+                  </Form.Item>
+                  <Form.Item
+                    {...restField}
+                    name={[name, 'percentage']}
+                    fieldKey={[fieldKey, 'percentage']}
+                    rules={[{ required: true, message: 'Missing skill percentage' }]}
+                  >
+                    <Input type="number" placeholder="Percentage" min={0} max={100} />
+                  </Form.Item>
+                  <MinusCircleOutlined onClick={() => remove(name)} />
+                </Space>
+              ))}
+              <Form.Item>
+                <Button type="dashed" onClick={() => add()} block icon={<PlusOutlined />}>
+                  Add Skill
+                </Button>
+              </Form.Item>
+            </>
+          )}
+        </Form.List>
+
+        <div className="flex justify-end w-full">
+          <Button type="primary" htmlType="submit">
             SAVE
-          </button>
+          </Button>
         </div>
       </Form>
     </div>
