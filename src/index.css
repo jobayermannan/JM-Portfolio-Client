@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -118,4 +120,81 @@
  }
 
 
+body {
+  background-color: #0F172A;
+  color: #F1F5F9;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Rocket styles */
+.rocket {
+  filter: drop-shadow(0 0 5px rgba(190, 190, 190, 0.5));
+  transition: all 0.3s ease-in-out;
+  position: relative;
+}
+
+.smoke-container {
+  position: absolute;
+  left: 50%;
+  top: -20px;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 60px;
+  transition: transform 0.3s ease-out;
+}
+
+.smoke-container.down {
+  transform: translateX(-50%) rotate(180deg);
  
+  top: 20px;
+}
+
+.smoke, .smoke-layer {
+  position: absolute;
+
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 60px;
+  background: radial-gradient(circle, rgb(255, 103, 8) 0%, rgba(39, 29, 29, 0.426) 70%);
+  opacity: 0.6;
+  border-radius: 50%;
+  animation: smokeRise 3s infinite;
+}
+
+.smoke-layer {
+  opacity: 0.3;
+  z-index: -1;
+}
+
+@keyframes smokeRise {
+  0% {
+    transform: translateX(-50%) translateY(0) scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateX(-50%) translateY(50px) scale(1.5);
+    opacity: 0;
+  }
+}
+
+@keyframes smokeDown {
+  0% {
+    transform: translateX(-50%) translateY(0) scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateX(-50%) translateY(-50px) scale(1.5);
+    opacity: 0;
+  }
+}
+
+.smoke-container.up .smoke,
+.smoke-container.up .smoke-layer {
+  animation: smokeRise 3s infinite;
+}
+
+.smoke-container.down .smoke,
+.smoke-container.down .smoke-layer {
+  animation: smokeDown 3s infinite;
+}

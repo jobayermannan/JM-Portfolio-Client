@@ -70,29 +70,24 @@ export default function Projects() {
           ))}
         </div>
         <motion.div key={selectItemIndex} variants={animationVariants} initial="initial" animate="animate" exit="exit">
-          <Card
-            title={<span className="text-mint text-md">{projects[selectItemIndex].title}</span>}
-            bordered={true}
-            style={{ width: '100%', borderColor: '#ADD8E6', backgroundColor: '#ADD8E6' }}
-            styles={{ header: { backgroundColor: '#09112C', color: '#09112C' } }} // Enhanced card design
-            className="rounded-lg"
-          >
-           <div className="bg-[#09112C] text-white overflow-hidden p-4 rounded-lg">
-  <div className="h-60 w-full mb-4 rounded-lg overflow-hidden">
-    <img src={projects[selectItemIndex].image} alt={projects[selectItemIndex].title} className='h-full w-full object-contain' />
-  </div>
-  <h4 className="text-blue text-lg font-medium mb-4 leading-tight">{projects[selectItemIndex].shortDescription}</h4>
-  <p className="text-xs mb-4">{projects[selectItemIndex].detailedDescription}</p>
-  <div className='flex items-center justify-between'>
-    <a href={projects[selectItemIndex].link} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-mint transition duration-300">
-      <FaExternalLinkAlt className="inline mr-2" />Project Link
-    </a>
-    <a href={projects[selectItemIndex].githubLink} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-mint transition duration-300">
-      <FaGithub className="inline mr-2" />GitHub Repository
-    </a>
-  </div>
-</div>
-          </Card>
+          <div className="bg-secondary rounded-lg overflow-hidden shadow-lg">
+            <div className="p-6">
+              <h3 className="text-2xl font-semibold text-accent mb-4">{projects[selectItemIndex].title}</h3>
+              <div className="mb-4">
+                <img src={projects[selectItemIndex].image} alt={projects[selectItemIndex].title} className='w-full h-48 object-cover rounded-lg' />
+              </div>
+              <p className="text-text mb-4">{projects[selectItemIndex].shortDescription}</p>
+              <p className="text-sm text-gray-400 mb-6">{projects[selectItemIndex].detailedDescription}</p>
+              <div className='flex items-center justify-between'>
+                <a href={projects[selectItemIndex].link} target="_blank" rel="noopener noreferrer" className="text-accent hover:text-blue-400 transition duration-300">
+                  <FaExternalLinkAlt className="inline mr-2" />Project Link
+                </a>
+                <a href={projects[selectItemIndex].githubLink} target="_blank" rel="noopener noreferrer" className="text-accent hover:text-blue-400 transition duration-300">
+                  <FaGithub className="inline mr-2" />GitHub Repository
+                </a>
+              </div>
+            </div>
+          </div>
         </motion.div>
       </div>
     </motion.div>
